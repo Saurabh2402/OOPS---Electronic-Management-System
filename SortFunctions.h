@@ -4,7 +4,7 @@ using namespace std;
         ///Time Complexity is O(n*log(n)) base 2 in worst case
         ///Hybrid of quick sort, heap sort, introsort
 
-//****************************************Mobile Sort Functions
+//****************************************Mobile Sort Functions**************************
 bool M_cmpfunc1(Mobile &M1,Mobile &M2)
     {return  M1.price < M2.price;}
 void M_Sort_by_Price(vector<Mobile> &M)
@@ -54,6 +54,8 @@ void M_Sort(vector<Mobile> &M)
     }
 }
 //****************************************************************************
+
+
 //  --Not Working ?????
 /*template<typename X>
 bool cmpfunc(X &X1,X &X2)
@@ -63,7 +65,8 @@ void Sort_by_Storage(vector<X> &arr)
     {sort(arr,arr+arr.size(),&cmpfunc);}
 */
 
-//****************************************Laptop Sort Functions
+
+//****************************************Laptop Sort Functions*****************
 bool L_cmpfunc1(Laptop &L1, Laptop &L2)
 {return L1.price < L2.price;}
 void L_Sort_by_Price(vector<Laptop> &L)
@@ -88,7 +91,6 @@ bool L_cmpfunc5(Laptop &L1,Laptop &L2)
     {return  L1.gCard < L2.gCard;}
 void L_Sort_by_GCard(vector<Laptop> &L)
     {sort(L.begin(),L.end(),&L_cmpfunc5);}
-
 
 void L_Sort(vector<Laptop> &L)
 {
@@ -116,12 +118,71 @@ void L_Sort(vector<Laptop> &L)
 //***************************************************************************L
 
 
+//****************************************Fridge Sort Functions*****************
 
-void Sort(vector<Mobile>&M, vector<Laptop>&L)
+bool F_cmpfunc1(Fridge &F1, Fridge &F2)
+{return F1.price < F2.price;}
+void F_Sort_by_Price(vector<Fridge> &F)
+    {sort(F.begin(),F.end(),&F_cmpfunc1);}
+
+bool F_cmpfunc2(Fridge &F1, Fridge &F2)
+{return F1.year_of_mfg < F2.year_of_mfg;}
+void F_Sort_by_Year_of_mfg(vector<Fridge> &F)
+    {sort(F.begin(),F.end(),&F_cmpfunc2);}
+
+bool F_cmpfunc3(Fridge &F1, Fridge &F2)
+{return F1.stars < F2.stars;}
+void F_Sort_by_Stars(vector<Fridge> &F)
+    {sort(F.begin(),F.end(),&F_cmpfunc3);}
+
+bool F_cmpfunc4(Fridge &F1, Fridge &F2)
+{return F1.doors < F2.doors;}
+void F_Sort_by_Doors(vector<Fridge> &F)
+    {sort(F.begin(),F.end(),&F_cmpfunc4);}
+
+bool F_cmpfunc5(Fridge &F1, Fridge &F2)
+{return F1.capacity < F2.capacity;}
+void F_Sort_by_Capacity(vector<Fridge> &F)
+    {sort(F.begin(),F.end(),&F_cmpfunc5);}
+
+bool F_cmpfunc6(Fridge &F1, Fridge &F2)
+{return F1.compressorWarranty < F2.compressorWarranty;}
+void F_Sort_by_Compressor_Warranty(vector<Fridge> &F)
+    {sort(F.begin(),F.end(),&F_cmpfunc6);}
+
+void F_Sort(vector<Fridge> &F)
+{
+    cout<<"1: Sort by Price"<<endl;
+    cout<<"2: Sort by Year of Manufacturing"<<endl;
+    cout<<"3: Sort by Stars"<<endl;
+    cout<<"4: Sort by Doors"<<endl;
+    cout<<"5: Sort by Capacity"<<endl;
+    cout<<"6: Sort by Compressor Warranty"<<endl;
+
+    cout <<"Enter your choice for Sorting : ";
+    int choice;
+    cin>>choice;
+
+    switch(choice)
+    {
+        case 1:F_Sort_by_Price(F);break;
+        case 2:F_Sort_by_Year_of_mfg(F);break;
+        case 3:F_Sort_by_Stars(F);break;
+        case 4:F_Sort_by_Doors(F);break;
+        case 5:F_Sort_by_Capacity(F);break;
+        case 6:F_Sort_by_Compressor_Warranty(F);break;
+
+        default :cout<<"Invalid Choice!!"<<endl;
+    }
+}
+//***************************************************************************L
+
+
+void Sort(vector<Mobile>&M, vector<Laptop>&L,vector<Fridge>&F)
 {
     cout<<"1: Sort Mobiles"<<endl;
     cout<<"2: Sort Laptops"<<endl;
-
+    cout<<"3: Sort Fridges"<<endl;
     int choice;
     cout<<"Enter your choice: ";
     cin>>choice;
@@ -130,6 +191,7 @@ void Sort(vector<Mobile>&M, vector<Laptop>&L)
     {
         case 1:M_Sort(M);break;
         case 2:L_Sort(L);break;
+        case 3:F_Sort(F);break;
 
         default:cout<<"Invalid Input!!"<<endl;
     }

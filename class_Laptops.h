@@ -93,7 +93,7 @@ void RetrieveLaptop(vector<Laptop> &L)
     fstream fin;
     fin.open("LaptopsInfo.txt",ios::in);
     fin>>size;
-    string buff;
+    
     Laptop temp;
 
     for(int i=0;i<size;i++)

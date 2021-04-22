@@ -1,36 +1,36 @@
 7
-Iphone
-5s
-20000 2017 16 4 32
-AppleM
-
-Nokia
-Note5
-17000 2021 32 4 64
-SnapDragon
-
-MicroMax
-10i
-12000 2021 32 4 64
-SnapDragon
-
 Samsung
 GalaxyM31
-22000 2021 64 6 128
+22000 2021 6 64 128
 SnapDragon
 
 Iphone
 12Pro
-50000 2020 64 8 128
+50000 2020 8 64 128
 AppleM3
+
+Nokia
+Note5
+17000 2021 4 32 64
+SnapDragon
 
 RedMI
 Note7Pro
-20000 2020 64 4 64
+20000 2020 4 64 64
 SnapDragon
+
+MicroMax
+10i
+12000 2021 4 32 64
+SnapDragon
+
+Iphone
+5s
+20000 2017 4 16 32
+AppleM
 
 OnePlus
 9t
-36000 2021 64 8 128
+36000 2021 8 64 128
 SnapDragon
 
