@@ -67,6 +67,9 @@ void SaveLaptop(vector<Laptop> &L)
     fstream fout;
     fout.open("LaptopsInfo.txt",ios::out);
 
+    if(!fout) // Error Handling
+    {perror("Error: ");exit(4);}
+
     fout<< L.size() <<endl;
 
     for(int i=0;i<L.size();i++)
@@ -92,6 +95,10 @@ void RetrieveLaptop(vector<Laptop> &L)
     int size;
     fstream fin;
     fin.open("LaptopsInfo.txt",ios::in);
+
+    if(!fin) // Error Handling
+    {perror("Error: ");exit(3);}
+
     fin>>size;
     
     Laptop temp;

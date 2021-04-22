@@ -68,7 +68,10 @@ void SaveMobiles(vector<Mobile>&M)
 
     fstream fout;
     fout.open("MobilesInfo.txt",ios::out);
-  
+
+    if(!fout) // Error Handling
+    {perror("Error: ");exit(1);}
+
     fout<< M.size()<<endl;
     for(int i=0;i<M.size();i++)
     {
@@ -92,6 +95,10 @@ void RetrieveMobiles(vector<Mobile>&M)
     int size;
     fstream fin;
     fin.open("MobilesInfo.txt",ios::in);
+
+    if(!fin) // Error Handling
+        {perror("Error: ");exit(2);}
+
     fin>>size;
     string buff;
     Mobile temp;

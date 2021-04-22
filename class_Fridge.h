@@ -1,12 +1,4 @@
-/*stars,
-doors,
-capacity - volume of the inside portion of the fridge,
-Compressor Warranty,
-company,
-model_no,   // company : Samsung   Model no: Galaxy M30 
-price, 
-year_of_mfg;
-*/
+
 using namespace std;
 class Fridge : public Electronics
 {
@@ -65,6 +57,10 @@ void SaveFridge(vector<Fridge> &F)
     //cout<<"Saving Fridges...";
     fstream fout;
     fout.open("FridgesInfo.txt",ios::out);
+
+    if(!fout) // Error Handling
+    {perror("Error: ");exit(5);}
+
     fout << F.size()<<endl;
 
     for(int i=0;i<F.size();i++)
@@ -89,6 +85,10 @@ void RetrieveFridge(vector<Fridge> &F)
     int size;
     fstream fin;
     fin.open("FridgesInfo.txt",ios::in);
+
+    if(!fin) // Error Handling
+    {perror("Error: ");exit(6);}
+
     fin>>size;
     Fridge temp;
 
