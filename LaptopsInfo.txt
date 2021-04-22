@@ -1,0 +1,26 @@
+5
+Dell
+Inspiron15
+70000 2021 8 512 11 2
+i5
+
+HP
+Pavillion
+48000 2019 8 256 9 0
+i5
+
+ASUS
+HighPower
+35000 2019 8 256 8 0
+i3
+
+ASUS
+Rog
+76000 2021 8 512 9 4
+i5
+
+Apple
+MacBookAir
+86000 2021 8 512 10 0
+M1
+

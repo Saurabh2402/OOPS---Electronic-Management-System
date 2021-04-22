@@ -6,127 +6,139 @@
 #include<algorithm>
 #include"class_Electronics.h"
 #include"class_Mobile.h"
+#include"class_Laptops.h"
 #include"SortFunctions.h"
-
 
 using namespace std;
 
-void Update(vector<Mobile> &M)
-{
-    Mobile temp;
-
-    temp.SetData("Samsung","GalaxyM31",22000,2021,64,6,128,"SnapDragon");
-    M.push_back(temp);
-
-    temp.SetData("Iphone","12Pro",50000,2020,64,8,128,"AppleM3");
-    M.push_back(temp);
-
-    temp.SetData("Nokia","Note5",17000,2021,32,4,64,"SnapDragon");
-    M.push_back(temp);
-
-    temp.SetData("RedMI","Note7Pro",20000,2020,64,4,64,"SnapDragon");
-    M.push_back(temp);
-
-    temp.SetData("MicroMax","10i",12000,2021,32,4,64,"SnapDragon");
-    M.push_back(temp);
-
-    temp.SetData("Iphone","5s",20000,2017,16,4,32,"AppleM");
-    M.push_back(temp);
-
-    temp.SetData("OnePlus","9t",36000,2021,64,8,128,"SnapDragon");
-    M.push_back(temp);
-}
-
-void Display(vector<Mobile> &M)
-{
-    cout<<"Displaying Mobiles\n\n";
-    cout<<left<<setw(10)<<"Company"<<"  "<<left<<setw(10)<<"Model no"<<"  "<<setw(5)<<"Price"<<"  "<<"Year_of_mfg"<<"  ";
-    cout<<setw(4)<<"RAM"<<"   "<<"Storage"<<"  "<<"Camera"<<"  "<<"Processor"<<endl;
-    for(int i=0;i<M.size();i++)
-            M[i].Display();
-}
-
-void SaveToFiles(vector<Mobile>&M)
-{
-    cout<<"Writing in a file...."<<endl;
-
-    fstream fout;
-    fout.open("MobilesInfo.txt",ios::out);
-  
-    fout<< M.size()<<endl;
-    for(int i=0;i<M.size();i++)
-    {
-        fout<<  M[i].company      << endl
-            <<  M[i].model_no     << endl
-            <<  M[i].price        << " "
-            <<  M[i].year_of_mfg  << " "
-            <<  M[i].camera       << " "
-            <<  M[i].RAM          << " "
-            <<  M[i].storage      << endl
-            <<  M[i].processor    << endl << endl;
-
-    }
-    fout.close();
-    cout<<"Written Succesfully"<<endl;
-}
-
-void RetrieveFiles(vector<Mobile>&M)
-{
-    cout<<"Retrieving Databases...."<<endl;
-    int size;
-    fstream fin;
-    fin.open("MobilesInfo.txt",ios::in);
-    fin>>size;
-    string buff;
-    Mobile temp;
-
-    for(int i=0;i<size;i++)
-    {
-        
-       
-       fin>> temp.company
-          >> temp.model_no
-          >> temp.price
-          >> temp.year_of_mfg
-          >> temp.RAM
-          >> temp.camera
-          >> temp.storage
-          >> temp.processor;
-
-        M.push_back(temp);
-        
-    }
-    fin.close();
-    cout<<"Retrieved Successfully"<<endl;
-}
-
-void Budgetify(vector<Mobile> M,int lower,int upper)
-{
-    cout<<"\n\nBudgetifying between your range..."<<endl<<endl;
-    for(int i=0;i<M.size();i++)
-    {
-        if(M[i].price>=lower && M[i].price<=upper)
-            M[i].Display();
-    }
-}
+int Menu();
+void Update(vector<Mobile>&M, vector<Laptop>&L);
+void Save(vector<Mobile>&M, vector<Laptop>&L);
+void Retrieve(vector<Mobile>&M, vector<Laptop>&L);
+void Display(vector<Mobile>&M, vector<Laptop>&L);
+void Budgetify(vector<Mobile>&M, vector<Laptop>&L);
 
 int main()
 {
     cout<<"\t\t\t"<<"Welcome to Eletronics Management System!!"<<endl<<endl;
     vector<Mobile> MobileVector;
-    /*
-    Update(MobileVector);
-    Display(MobileVector);
-    SaveToFiles(MobileVector);
-    */
-    
-    //Display(MobileVector);
-    RetrieveFiles(MobileVector);
-    Display(MobileVector);
-    
-   // Budgetify(MobileVector,15000,40000);
+    vector<Laptop> LaptopVector;
 
-   //Sort_by_Price(MobileVector); --Working fine
-   //Sort_by_Camera(MobileVector); -- All Sorts working
-   Display(MobileVector);
+   char choice = 'y';
+    while(choice=='y' || choice=='Y')
+    {
+        int answer;
+        answer = Menu();
+
+        switch(answer)
+        {
+            case 1: Update(MobileVector,LaptopVector); break;
+            case 2: Budgetify(MobileVector,LaptopVector); break;
+            case 3: Save(MobileVector,LaptopVector); break;
+            case 4: Retrieve(MobileVector,LaptopVector); break;
+            case 5: Display(MobileVector,LaptopVector); break;
+            case 6: Sort(MobileVector,LaptopVector);break;
+            case 0: cout<<"Program Closed!!";exit(1);
+
+            default : cout<<"Invalid Input!!"<<endl;
+            
+        }
+    }
+/*
+    Retrieve(MobileVector,LaptopVector);
+    Display(MobileVector,LaptopVector);
+    Sort_by_Storage<Mobile>(MobileVector);
+    Display(MobileVector,LaptopVector);
+*/
+    
+   
+
+}
+
+
+int Menu()
+{
+    cout<<endl<<right<<setw(15)<<"MENU" <<endl<<endl;
+    cout<<"1: Update Electronics"       <<endl;
+    cout<<"2: Budgetify" <<endl;
+    cout<<"3: Save Files"               <<endl;
+    cout<<"4: Retrieve Files"           <<endl;
+    cout<<"5: Display Electronics"      <<endl;
+    cout<<"6: Sort Electronics"         <<endl;
+    cout<<"0: Exit System"              <<endl;
+
+    cout<<"Enter Your choice : ";
+    int answer;
+    cin>>answer;
+    cout<<endl;
+    return answer;
+}
+
+void Update(vector<Mobile>&M, vector<Laptop>&L)
+{
+    cout<<"1: Update Mobiles"<<endl;
+    cout<<"2: Update Laptops"<<endl;
+
+    int choice;
+    cout<<"Enter your choice : ";
+    cin>>choice;
+    cout<<endl;
+
+    switch(choice)
+    {
+        case 1: UpdateMobile(M);break;
+        case 2: UpdateLaptop(L);break;
+
+        default : cout<<"Invalid Choice!!"<<endl;
+    }
+}
+
+void Save(vector<Mobile>&M, vector<Laptop>&L)
+{
+    SaveMobiles(M);
+    SaveLaptop(L);
+}
+
+void Retrieve(vector<Mobile>&M, vector<Laptop>&L)
+{
+    RetrieveMobiles(M);
+    RetrieveLaptop(L);
+
+}
+
+void Display(vector<Mobile>&M, vector<Laptop>&L)
+{
+    cout<<"1: Display Mobiles"<<endl;
+    cout<<"2: Display Laptops"<<endl;
+    int choice;
+    cout<<"Enter your choice : ";
+    cin>>choice;
+    cout<<endl;
+
+    switch(choice)
+    {
+        case 1: DisplayMobile(M);break;
+        case 2: DisplayLaptop(L); break;
+
+        default: cout<<"Invalid Input!!"<<endl;
+    }
+}
+
+void Budgetify(vector<Mobile>&M, vector<Laptop>&L)
+{
+    cout<<"1: Budgetify Mobiles"<<endl;
+    cout<<"2: Budgetify Laptops"<<endl;
+
+    int choice;
+    cout<<"Enter your choice : ";
+    cin>>choice;
+    cout<<endl;
+
+    switch(choice)
+    {
+        case 1: BudgetifyMobiles(M);break;
+        case 2: BudgetifyLaptops(L);break;
+
+        default : cout<<"Invalid Choice!!"<<endl;
+    }
 }
