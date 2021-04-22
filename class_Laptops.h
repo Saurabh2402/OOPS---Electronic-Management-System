@@ -63,7 +63,7 @@ void DisplayLaptop(vector<Laptop> &L)
 
 void SaveLaptop(vector<Laptop> &L)
 {
-    cout<<"Writing in Laptop file..."<<endl;
+    //cout<<"Writing in Laptop file..."<<endl;
     fstream fout;
     fout.open("LaptopsInfo.txt",ios::out);
 
@@ -83,12 +83,12 @@ void SaveLaptop(vector<Laptop> &L)
 
     }
     fout.close();
-    cout<<"Written Succesfully"<<endl;
+    //cout<<"Written Succesfully"<<endl;
 }
 
 void RetrieveLaptop(vector<Laptop> &L)
 {
-    cout<<"Retrieving Laptops...."<<endl;
+    //cout<<"Retrieving Laptops...."<<endl;
     int size;
     fstream fin;
     fin.open("LaptopsInfo.txt",ios::in);
@@ -112,7 +112,7 @@ void RetrieveLaptop(vector<Laptop> &L)
     }
 
     fin.close();
-    cout<<"Retrieved Successfully"<<endl;
+    //cout<<"Retrieved Successfully"<<endl;
 }
 
 

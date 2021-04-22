@@ -20,7 +20,8 @@ void Budgetify(vector<Mobile>&M, vector<Laptop>&L);
 
 int main()
 {
-    cout<<"\t\t\t"<<"Welcome to Eletronics Management System!!"<<endl<<endl;
+    system("cls");
+    cout<<"\n\t\t"<<"Welcome to Eletronics Management System!!"<<endl;
     vector<Mobile> MobileVector;
     vector<Laptop> LaptopVector;
 
@@ -43,7 +44,13 @@ int main()
             default : cout<<"Invalid Input!!"<<endl;
             
         }
+        cout<<"\nDo you want to continue with the system (y/n) ? : ";
+        cin>>choice;
+        cout<<endl;
+        if(choice!='n')
+            choice = 'y';
     }
+    cout<<"Program Closed by your choice!!"<<endl<<endl;
 /*
     Retrieve(MobileVector,LaptopVector);
     Display(MobileVector,LaptopVector);
@@ -58,7 +65,8 @@ int main()
 
 int Menu()
 {
-    cout<<endl<<right<<setw(15)<<"MENU" <<endl<<endl;
+    system("cls");
+    cout<<right<<setw(15)<<"MENU" <<endl<<endl;
     cout<<"1: Update Electronics"       <<endl;
     cout<<"2: Budgetify" <<endl;
     cout<<"3: Save Files"               <<endl;
@@ -67,7 +75,7 @@ int Menu()
     cout<<"6: Sort Electronics"         <<endl;
     cout<<"0: Exit System"              <<endl;
 
-    cout<<"Enter Your choice : ";
+    cout<<">> Enter Your choice : ";
     int answer;
     cin>>answer;
     cout<<endl;
@@ -97,13 +105,14 @@ void Save(vector<Mobile>&M, vector<Laptop>&L)
 {
     SaveMobiles(M);
     SaveLaptop(L);
+    cout<<"Saved Succesfully..."<<endl;
 }
 
 void Retrieve(vector<Mobile>&M, vector<Laptop>&L)
 {
     RetrieveMobiles(M);
     RetrieveLaptop(L);
-
+    cout<<"Retrieved Succesfully..."<<endl;
 }
 
 void Display(vector<Mobile>&M, vector<Laptop>&L)

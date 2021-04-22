@@ -64,7 +64,7 @@ void DisplayMobile(vector<Mobile> &M)
 
 void SaveMobiles(vector<Mobile>&M)
 {
-    cout<<"Writing in a file...."<<endl;
+    //cout<<"Writing in a file...."<<endl;
 
     fstream fout;
     fout.open("MobilesInfo.txt",ios::out);
@@ -83,12 +83,12 @@ void SaveMobiles(vector<Mobile>&M)
 
     }
     fout.close();
-    cout<<"Written Succesfully"<<endl;
+    //cout<<"Written Succesfully"<<endl;
 }
 
 void RetrieveMobiles(vector<Mobile>&M)
 {
-    cout<<"Retrieving Mobiles ...."<<endl;
+    //cout<<"Retrieving Mobiles ...."<<endl;
     int size;
     fstream fin;
     fin.open("MobilesInfo.txt",ios::in);
@@ -111,7 +111,7 @@ void RetrieveMobiles(vector<Mobile>&M)
         
     }
     fin.close();
-    cout<<"Retrieved Successfully"<<endl;
+    //cout<<"Retrieved Successfully"<<endl;
 }
 
 void BudgetifyMobiles(vector<Mobile> &M)
