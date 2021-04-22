@@ -19,7 +19,7 @@ class Electronics
     
     void Display()
     {
-        cout<<left<<setw(10)<<company<<"  "<<left<<setw(10)<<model_no<<"  "<<setw(5)<<price<<"  "<<setw(11)<<year_of_mfg<<"  ";
+        cout<<left<<setw(10)<<company<<"  "<<left<<setw(10)<<model_no<<"  "<<setw(7)<<price<<"  "<<setw(11)<<year_of_mfg<<"  ";
     }
     
 };

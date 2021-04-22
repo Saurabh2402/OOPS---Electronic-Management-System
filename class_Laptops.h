@@ -20,7 +20,7 @@ class Laptop : public Electronics
     void Display()
     {
         Electronics::Display();
-        cout<<setw(2)<<RAM<<"GB   "<<setw(3)<<storage<<"GB    "<<setw(2)<<gCard<<"GB    "<<setw(10)<<processor<<"  "<<gen<<endl;
+        cout<<setw(2)<<RAM<<"GB   "<<setw(4)<<storage<<"GB    "<<setw(2)<<gCard<<"GB    "<<setw(10)<<processor<<"  "<<gen<<endl;
     }
 
     friend void SaveLaptop(vector<Laptop> &L);
@@ -45,14 +45,32 @@ void UpdateLaptop(vector<Laptop> &L)
 
     temp.SetData("Apple","MacBookAir",86000, 2021,8,512,10,"M1");
     L.push_back(temp);
+
+    temp.SetData("AlienWare","M15",212000, 2021,16,1024,11,"i7",6);
+    L.push_back(temp);
+
+    temp.SetData("Dell","Vostro",36000, 2019,4,128,8,"i3");
+    L.push_back(temp);
+
+    temp.SetData("Predator","Helios300",106000, 2020,16,1024,10,"i5",6);
+    L.push_back(temp);
+
+    temp.SetData("Acer","Aspire3",45000, 2020,8,256,10,"i5",2);
+    L.push_back(temp);
+
+    temp.SetData("Lenovo","V15",44000, 2020,8,512,9,"i5");
+    L.push_back(temp);
+    
+    temp.SetData("Apple","MacBookPro",250000, 2021,16,1024,11,"i7");
+    L.push_back(temp);
 }
 
 void DisplayLaptop(vector<Laptop> &L)
 {
     cout<<"Displaying Laptops..."<<endl<<endl;
 
-    cout<<left<<setw(10)<<"Company"<<"  "<<left<<setw(10)<<"Model no"<<"  "<<setw(5)<<"Price"<<"  "<<"Year_of_mfg"<<"  ";
-    cout<<setw(4)<<"RAM"<<"   "<<"Storage"<<"  "<<"G Card"<<"  "<<"Processor"<<"  "<<"Gen"<<endl<<endl;
+    cout<<left<<setw(10)<<"Company"<<"  "<<left<<setw(10)<<"Model no"<<"  "<<setw(6)<<"Price"<<"  "<<"Year_of_mfg"<<"  ";
+    cout<<" "<<setw(4)<<"RAM"<<"   "<<"Storage"<<"   "<<"G Card"<<"  "<<"Processor"<<"   "<<"Gen"<<endl<<endl;
 
     for(int i=0;i<L.size();i++)
     {
@@ -132,8 +150,8 @@ void BudgetifyLaptops(vector<Laptop> &L)
     cin>>upper;
     cout<<"\n\nBudgetifying between your range..."<<endl<<endl;
 
-    cout<<left<<setw(10)<<"Company"<<"  "<<left<<setw(10)<<"Model no"<<"  "<<setw(5)<<"Price"<<"  "<<"Year_of_mfg"<<"  ";
-    cout<<setw(4)<<"RAM"<<"   "<<"Storage"<<"  "<<"G Card"<<"  "<<"Processor"<<"  "<<"Gen"<<endl<<endl;
+    cout<<left<<setw(10)<<"Company"<<"  "<<left<<setw(10)<<"Model no"<<"  "<<setw(6)<<"Price"<<"  "<<"Year_of_mfg"<<"  ";
+    cout<<" "<<setw(4)<<"RAM"<<"   "<<"Storage"<<"   "<<"G Card"<<"  "<<"Processor"<<"   "<<"Gen"<<endl<<endl;
 
     for(int i=0;i<L.size();i++)
     {

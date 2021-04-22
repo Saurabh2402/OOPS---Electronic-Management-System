@@ -51,12 +51,21 @@ void UpdateMobile(vector<Mobile> &M)
 
     temp.SetData("OnePlus","9t",36000,2021,64,8,128,"SnapDragon");
     M.push_back(temp);
+
+    temp.SetData("Samsung","GalaxyA51",22000,2021,48,8,64,"SnapDragon");
+    M.push_back(temp);
+
+    temp.SetData("RedMI","Note12",18000,2021,64,4,128,"SnapDragon");
+    M.push_back(temp);
+
+    temp.SetData("OnePlus","5t",28000,2021,64,6,64,"SnapDragon");
+    M.push_back(temp);
 }
 
 void DisplayMobile(vector<Mobile> &M)
 {
     cout<<"Displaying Mobiles....\n\n";
-    cout<<left<<setw(10)<<"Company"<<"  "<<left<<setw(10)<<"Model no"<<"  "<<setw(5)<<"Price"<<"  "<<"Year_of_mfg"<<"  ";
+    cout<<left<<setw(10)<<"Company"<<"  "<<left<<setw(10)<<"Model no"<<"  "<<setw(7)<<"Price"<<"  "<<"Year_of_mfg"<<"  ";
     cout<<setw(4)<<"RAM"<<"   "<<"Storage"<<"  "<<"Camera"<<"  "<<"Processor"<<endl;
     for(int i=0;i<M.size();i++)
             M[i].Display();

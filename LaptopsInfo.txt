@@ -1,4 +1,4 @@
-5
+11
 Dell
 Inspiron15
 70000 2021 8 512 11 2
@@ -23,4 +23,34 @@ Apple
 MacBookAir
 86000 2021 8 512 10 0
 M1
+
+AlienWare
+M15
+212000 2021 16 1024 11 6
+i7
+
+Dell
+Vostro
+36000 2019 4 128 8 0
+i3
+
+Predator
+Helios300
+106000 2020 16 1024 10 6
+i5
+
+Acer
+Aspire3
+45000 2020 8 256 10 2
+i5
+
+Lenovo
+V15
+44000 2020 8 512 9 0
+i5
+
+Apple
+MacBookPro
+250000 2021 16 1024 11 0
+i7
 
