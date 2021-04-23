@@ -9,7 +9,7 @@
 #include"class_Laptops.h"
 #include"class_Fridge.h"
 #include"SortFunctions.h"
-
+#include"Authentication.cpp"
 using namespace std;
 
 int Menu();
@@ -23,6 +23,9 @@ int main()
 {
     system("cls");
     cout<<"\n\t\t"<<"Welcome to Eletronics Management System!!"<<endl;
+
+    MainAuthentication();
+    system("cls");
     vector<Mobile> MobileVector;
     vector<Laptop> LaptopVector;
     vector<Fridge> FridgeVector;
