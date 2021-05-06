@@ -1,5 +1,5 @@
-#include <iostream>
-#include <fstream>
+#include<iostream>
+#include<fstream>
 #include<string>
 #include<vector>
 #include<iomanip>
@@ -63,7 +63,8 @@ int main()
     Display(MobileVector,LaptopVector);
 */
     
-    
+    //Implement Summary Files : Stores previous Sales and details
+    //User defined exceptions :eg- price should be greater than 0
 }
 
 
