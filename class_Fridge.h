@@ -8,6 +8,11 @@ public:
 
     void SetData(string c,string m,int p, int y,int stars,int d, int capa, int warr)
     {
+        if(p<0){
+            cout<<"Invalid Price!!"<<endl;
+            cout<<"Enter Price again : ";
+            cin>>p;
+        }
         Electronics::SetData(c,m,p,y);
         this->stars = stars;
         doors = d;
@@ -28,6 +33,7 @@ void DisplayFridge(vector<Fridge> &F)
     cout<<"Displaying Fridges...."<<endl<<endl;
     cout<<left<<setw(10)<<"Company"<<"  "<<left<<setw(10)<<"Model no"<<"  "<<setw(5)<<"Price"<<"  "<<"Year_of_mfg"<<"  ";
     cout<<"Stars"<<"  "<<"Doors"<<"  "<<"Capacity"<<"  "<<"CompressorWarranty"<<endl<<endl;
+    
     for(int i=0;i<F.size();i++)
     {
         F[i].Display();
@@ -50,7 +56,6 @@ void UpdateFridge(vector<Fridge> &F)
     F.push_back(temp);
 
 }
-
 
 void SaveFridge(vector<Fridge> &F)
 {
@@ -127,6 +132,31 @@ void BudgetifyFridges(vector<Fridge>&F)
     }
 }
 
+void summaryFridge(vector<Fridge> &F)
+{
+    //cout<<"summaryFridge Function Called************"<<endl;
+
+    int c_LG=0, c_whirlpool=0, c_samsung=0, c_godrej=0;
+    for(int i=0;i<F.size();i++)
+    {
+        if(F[i].company=="LG")
+            c_LG++;
+        else if(F[i].company=="Whirlpool")
+            c_whirlpool++;
+        else if(F[i].company=="Samsung")
+            c_samsung++;
+        else if(F[i].company=="Godrej")
+            c_godrej++;
+        
+    }
+    cout << "Total Count of Fridges : "<<F.size()<<endl<<endl;
+    cout << "LG        : " << c_LG         << endl;
+    cout << "Whirlpool : " << c_whirlpool  << endl;
+    cout << "Samsung   : " << c_samsung    << endl;
+    cout << "Godrej    : " << c_godrej     << endl;
+    cout<<endl<<endl;
+    
+}
 
 
 

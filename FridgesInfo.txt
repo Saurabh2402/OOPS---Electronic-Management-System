@@ -1,1 +1,17 @@
-0
+4
+LG
+Model3
+14000 2019 4 2 260 2
+
+Whirlpool
+Model6
+24000 2021 5 2 290 4
+
+Samsung
+Model5
+16000 2019 3 2 230 3
+
+Godrej
+Model2
+11000 2019 4 1 200 2
+

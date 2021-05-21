@@ -6,6 +6,7 @@
 #include<algorithm>
 #include"class_Electronics.h"
 #include"class_Mobile.h"
+
 #include"class_Laptops.h"
 #include"class_Fridge.h"
 #include"SortFunctions.h"
@@ -18,6 +19,9 @@ void Save(vector<Mobile>&M, vector<Laptop>&L,vector<Fridge>&F);
 void Retrieve(vector<Mobile>&M, vector<Laptop>&L,vector<Fridge>&F);
 void Display(vector<Mobile>&M, vector<Laptop>&L,vector<Fridge>&F);
 void Budgetify(vector<Mobile>&M, vector<Laptop>&L,vector<Fridge>&F);
+void showSummary(vector<Mobile>&M, vector<Laptop>&L,vector<Fridge>&F);
+void Delete(vector<Mobile>&M, vector<Laptop>&L,vector<Fridge>&F);
+
 
 int main()
 {
@@ -43,6 +47,7 @@ int main()
             case 4: Retrieve(MobileVector,LaptopVector,FridgeVector); break;
             case 5: Display(MobileVector,LaptopVector,FridgeVector); break;
             case 6: Sort(MobileVector,LaptopVector,FridgeVector);break;
+            case 7: showSummary(MobileVector,LaptopVector,FridgeVector);break;
             case 0: cout<<"Program Closed!!";exit(1);
 
             default : cout<<"Invalid Input!!"<<endl;
@@ -63,8 +68,8 @@ int main()
     Display(MobileVector,LaptopVector);
 */
     
-    //Implement Summary Files : Stores previous Sales and details
-    //User defined exceptions :eg- price should be greater than 0
+    //Implement Summary Files : Stores previous Sales and details 
+    //User defined exceptions : eg- price should be greater than 0
 }
 
 
@@ -78,6 +83,7 @@ int Menu()
     cout<<"4: Retrieve Files"           <<endl;
     cout<<"5: Display Electronics"      <<endl;
     cout<<"6: Sort Electronics"         <<endl;
+    cout<<"7: Show Summary"             <<endl;
     cout<<"0: Exit System"              <<endl;
 
     cout<<">> Enter Your choice : ";
@@ -158,4 +164,31 @@ void Budgetify(vector<Mobile>&M, vector<Laptop>&L,vector<Fridge>&F)
         case 3: BudgetifyFridges(F);break;
         default : cout<<"Invalid Choice!!"<<endl;
     }
+}
+
+
+void showSummary(vector<Mobile>&M, vector<Laptop>&L,vector<Fridge>&F)
+{
+    cout<<"1: Summary of Mobiles"<<endl;
+    cout<<"2: Summary of Laptops"<<endl;
+    cout<<"3: Summary of Fridges"<<endl;
+    int choice;
+    cout<<"Enter your choice : ";
+    cin>>choice;
+    cout<<endl;
+
+    switch(choice)
+    {
+        case 1: summaryMobile(M);break;
+        case 2: summaryLaptop(L); break;
+        case 3: summaryFridge(F);break;
+        default: cout<<"Invalid Input!!"<<endl;
+    }
+
+    /*summaryMobile(M);
+    summaryLaptop(L);
+    summaryFridge(F);
+    */
+
+    
 }

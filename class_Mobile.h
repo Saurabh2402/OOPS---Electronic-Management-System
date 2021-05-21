@@ -1,6 +1,26 @@
 
 using namespace std;
 
+
+int getPositiveValue(int v,int index)
+{
+     if(v<0)
+    {
+        if(index==1)
+            cout<<"Camera MegaPixels cannot be Negative!!"<<endl;
+        else if(index==2)
+            cout<<"RAM cannot be Negative!!"<<endl;
+        else if(index==3)
+            cout<<"Storage cannot be Negative!!"<<endl;
+        else if(index==4)
+            cout<<"Graphic Card cannot be Negative!!"<<endl;    
+        
+        cout<<"Enter value again : ";
+        cin>>v;
+    }
+    return v;
+}
+
 class Mobile : public Electronics
 {
     public:
@@ -9,6 +29,11 @@ class Mobile : public Electronics
 
     void SetData(string c,string m,int p, int y,int cam,int R,int stor,string pro)
     {
+        
+        cam = getPositiveValue(cam,1);
+        R = getPositiveValue(R,2);
+        stor = getPositiveValue(stor,3);
+
         Electronics::SetData(c,m,p,y);
         camera = cam;
         RAM = R;
@@ -30,14 +55,15 @@ class Mobile : public Electronics
 void UpdateMobile(vector<Mobile> &M)
 {
     Mobile temp;
-
-    temp.SetData("Samsung","GalaxyM31",22000,2021,64,6,128,"SnapDragon");
+                //Company, Modelno, Price, YearOfMfg, Camera, RAM, Storage, Processor
+                                            // /->Year purposely set 2000 
+    temp.SetData("Samsung","GalaxyM31",22000,2000,64,6,128,"SnapDragon");
     M.push_back(temp);
 
-    temp.SetData("Iphone","12Pro",50000,2020,64,8,128,"AppleM3");
+    temp.SetData("Iphone","12Pro",50000,2020,64,8,-128,"AppleM3");
     M.push_back(temp);
 
-    temp.SetData("Nokia","Note5",17000,2021,32,4,64,"SnapDragon");
+    temp.SetData("Nokia","Note5",17000,2021,32,12,64,"SnapDragon");
     M.push_back(temp);
 
     temp.SetData("RedMI","Note7Pro",20000,2020,64,4,64,"SnapDragon");
@@ -55,10 +81,10 @@ void UpdateMobile(vector<Mobile> &M)
     temp.SetData("Samsung","GalaxyA51",22000,2021,48,8,64,"SnapDragon");
     M.push_back(temp);
 
-    temp.SetData("RedMI","Note12",18000,2021,64,4,128,"SnapDragon");
+    temp.SetData("RedMI","Note12",18000,2021,64,12,128,"SnapDragon");
     M.push_back(temp);
-
-    temp.SetData("OnePlus","5t",28000,2021,64,6,64,"SnapDragon");
+                                // /->Price purposely set Negative 
+    temp.SetData("OnePlus","5t",-28000,2021,64,6,64,"SnapDragon");
     M.push_back(temp);
 }
 
@@ -66,7 +92,7 @@ void DisplayMobile(vector<Mobile> &M)
 {
     cout<<"Displaying Mobiles....\n\n";
     cout<<left<<setw(10)<<"Company"<<"  "<<left<<setw(10)<<"Model no"<<"  "<<setw(7)<<"Price"<<"  "<<"Year_of_mfg"<<"  ";
-    cout<<setw(4)<<"RAM"<<"   "<<"Storage"<<"  "<<"Camera"<<"  "<<"Processor"<<endl;
+    cout<<setw(4)<<"RAM"<<"   "<<"Storage"<<"  "<<"Camera"<<"  "<<"Processor"<<endl<<endl;
     for(int i=0;i<M.size();i++)
             M[i].Display();
 }
@@ -148,3 +174,38 @@ void BudgetifyMobiles(vector<Mobile> &M)
     }
 }
 
+void summaryMobile(vector<Mobile> &M)
+{
+    //cout<<"summaryMobile Function Called************"<<endl;
+
+    int c_iphone=0, c_samsung=0, c_MI=0, c_nokia=0, c_oneplus=0, c_micromax=0, c_oppo=0, c_vivo=0;
+    for(int i=0;i<M.size();i++)
+    {
+        if(M[i].company=="Iphone")
+            c_iphone++;
+        else if(M[i].company=="Samsung")
+            c_samsung++;
+        else if(M[i].company=="RedMI" || M[i].company=="MI")
+            c_MI++;
+        else if(M[i].company=="Nokia")
+            c_nokia++;
+        else if(M[i].company=="OnePlus")
+            c_oneplus++;
+        else if(M[i].company=="MicroMax")
+            c_micromax++;
+        else if(M[i].company=="Oppo")
+            c_micromax++;
+        else if(M[i].company=="Vivo")
+            c_micromax++;
+    }
+    cout<<"Total Count of Mobiles : "<<M.size()<<endl<<endl;
+    cout<<"Iphones  : " << c_iphone   << endl;
+    cout<<"Samsung  : " << c_samsung  << endl;
+    cout<<"MI       : " << c_MI       << endl;
+    cout<<"Nokia    : " << c_nokia    << endl;
+    cout<<"OnePlus  : " << c_oneplus  << endl;
+    cout<<"MicroMax : " << c_micromax << endl;
+    cout<<"Oppo     : " << c_oppo     << endl;
+    cout<<"Vivo     : " << c_vivo     << endl;
+    cout<<endl<<endl;
+}

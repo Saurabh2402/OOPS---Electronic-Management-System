@@ -1,5 +1,28 @@
 
 using namespace std;
+int getValidPrice(int price)    
+{
+    //Now a days, price of mobile phones is not less than 3000
+    if(price<3000)
+    {
+        cout<<"Invalid Price!!"<<endl;
+        cout<<"Enter Price again : ";
+        cin>>price;
+    }
+    return price;
+}
+
+int getValidYear(int year)    
+{
+    //Most of the screentouch mobiles(good) came after 2010
+    if(year<2010)
+    {
+        cout<<"Invalid Year!!"<<endl;
+        cout<<"Enter Year again : ";
+        cin>>year;
+    }
+    return year;
+}
 
 class Electronics
 {
@@ -10,6 +33,9 @@ class Electronics
 
     void SetData(string c,string m,int p, int y)
     {
+        p = getValidPrice(p);
+        y = getValidYear(y);
+        
         company = c;
         model_no = m;
         price = p;

@@ -1,4 +1,15 @@
 using namespace std;
+int getValidGeneration(int gen)    
+{
+    //Now a days, Generations are not less than 4
+    if(gen<4)
+    {
+        cout<<"Invalid Generation!!"<<endl;
+        cout<<"Enter Generation again : ";
+        cin>>gen;
+    }
+    return gen;
+}
 
 class Laptop : public Electronics
 {
@@ -8,7 +19,11 @@ class Laptop : public Electronics
     
     void SetData(string c,string m,int p, int y,int R,int stor,int g,string pro,int gCard=0)    // By default gCard will be 0
     {
-        
+        R = getPositiveValue(R,2);
+        stor = getPositiveValue(stor,3);
+        g = getValidGeneration(g);
+        gCard = getPositiveValue(gCard,4);
+
         Electronics::SetData(c,m,p,y);
         RAM = R;
         storage = stor;
@@ -30,7 +45,7 @@ class Laptop : public Electronics
 void UpdateLaptop(vector<Laptop> &L)
 {
     Laptop temp;
-
+                 //Company, Modelno, Price, YearOfMfg, RAM, Storage, Gen,  Processor
     temp.SetData("Dell","Inspiron15",70000, 2021,8,512,11,"i5",2);
     L.push_back(temp);
 
@@ -160,4 +175,40 @@ void BudgetifyLaptops(vector<Laptop> &L)
     }
 }
 
+void summaryLaptop(vector<Laptop> &L)
+{
+    //cout<<"summaryLaptop Function Called************"<<endl;
 
+    int c_dell=0, c_hp=0, c_apple=0, c_asus=0, c_acer=0, c_lenovo=0,c_alienware=0, c_predator=0;
+    
+    for(int i=0;i<L.size();i++)
+    {
+        if(L[i].company=="Dell")
+            c_dell++;
+        else if(L[i].company=="HP")
+            c_hp++;
+        else if(L[i].company=="Apple" )
+            c_apple++;
+        else if(L[i].company=="ASUS" || L[i].company=="Asus")
+            c_asus++;
+        else if(L[i].company=="Acer")
+            c_acer++;
+        else if(L[i].company=="Lenovo")
+            c_lenovo++;
+        else if(L[i].company=="AlienWare")
+            c_alienware++;
+        else if(L[i].company=="Predator")
+            c_predator++;
+    }
+    
+    cout<<"Total Count of Laptops : "<<L.size()<<endl<<endl;
+    cout<<"Dell       : " << c_dell   << endl;
+    cout<<"HP         : " << c_hp  << endl;
+    cout<<"Apple      : " << c_apple       << endl;
+    cout<<"ASUS       : " << c_asus    << endl;
+    cout<<"Acer       : " << c_acer  << endl;
+    cout<<"Lenovo     : " << c_lenovo << endl;
+    cout<<"AlienWare  : " << c_alienware     << endl;
+    cout<<"Predator   : " << c_predator     << endl;
+    cout<<endl<<endl;
+}
