@@ -67,7 +67,7 @@ class Mobile : public Electronics
 
 void UpdateMobile(vector<Mobile> &M)
 {
-    Mobile temp;
+    /*Mobile temp;
                 //Company, Modelno, Price, YearOfMfg, Camera, RAM, Storage, Processor
                                             // /->Year purposely set 2000 
     temp.SetData("Samsung","GalaxyM31",22000,2000,64,6,128,"SnapDragon");
@@ -98,7 +98,38 @@ void UpdateMobile(vector<Mobile> &M)
     M.push_back(temp);
                                 // /->Price purposely set Negative 
     temp.SetData("OnePlus","5t",-28000,2021,64,6,64,"SnapDragon");
-    M.push_back(temp);
+    M.push_back(temp);*/
+
+    /*Mobile temp;
+    
+    cout<<"Enter Company : ";
+    cin>> temp.company;
+
+    cout<<"Enter ModelNo : ";
+    cin>> temp.model_no;
+
+    cout<<"Enter Price : ";
+    cin>> temp.price;
+
+    cout<<"Enter Year of MFG : ";
+    cin>> temp.year_of_mfg;
+
+    cout<<"Enter RAM : ";
+    cin>> temp.RAM;
+
+    cout<<"Enter Storage : ";
+    cin>> temp.storage;
+
+    cout<<"Enter Generation  : ";
+    cin>> temp.gen;
+
+    cout<<"Enter Processor : ";
+    cin>> temp.processor;
+
+    cout<<"Enter Graphics Card : ";
+    cin>> temp.gCard;
+
+    L.push_back(temp);*/
 }
 
 void DisplayMobile(vector<Mobile> &M)

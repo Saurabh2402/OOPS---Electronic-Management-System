@@ -7,6 +7,7 @@
 #include"class_Electronics.h"
 #include"class_Mobile.h"
 
+
 #include"class_Laptops.h"
 #include"class_Fridge.h"
 #include"SortFunctions.h"
@@ -60,7 +61,20 @@ int main()
             choice = 'y';
     }
     cout<<"Program Closed by your choice!!"<<endl<<endl;
+/*    
+    Retrieve
+    Display
+    Summary
     
+    Update
+    Display
+    Summary
+
+    Budgetify
+
+    Sort Wale
+    
+*/
 /*
     Retrieve(MobileVector,LaptopVector);
     Display(MobileVector,LaptopVector);

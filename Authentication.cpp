@@ -125,7 +125,7 @@ public:
     {
         cout<<"1 : SignUp"<<endl;
         cout<<"2 : LogIn"<<endl;
-        cout<<"3 : Display usernames and passwords"<<endl;
+        //cout<<"3 : Display usernames and passwords"<<endl;
         cout<<"4 : Exit"<<endl;
         cout<<"Enter your choice : ";
         int choice;
@@ -159,7 +159,7 @@ void MainAuthentication()
                         }
                         break;
                     }
-            case 3: Auth.DisplayUsers();break;
+            //case 3: Auth.DisplayUsers();break;
             case 4: exit(8);
             default: cout<<"Invalid Choice!!"<<endl;
 

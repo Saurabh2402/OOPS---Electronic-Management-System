@@ -54,7 +54,7 @@ class Laptop : public Electronics
 
 void UpdateLaptop(vector<Laptop> &L)
 {
-    Laptop temp;
+    /*Laptop temp;
                  //Company, Modelno, Price, YearOfMfg, RAM, Storage, Gen,  Processor GCard
     temp.SetData("Dell","Inspiron15",70000, 2021,8,512,1,"i5",2);
     L.push_back(temp);
@@ -87,7 +87,49 @@ void UpdateLaptop(vector<Laptop> &L)
     L.push_back(temp);
     
     temp.SetData("Apple","MacBookPro",250000, 2021,16,1024,11,"i7");
-    L.push_back(temp);
+    L.push_back(temp);*/
+    char choice='y';
+    while(choice=='y'|| choice=='Y')
+    {
+        Laptop temp;
+    
+        cout<<"Enter Company : ";
+        cin>> temp.company;
+
+        cout<<"Enter ModelNo : ";
+        cin>> temp.model_no;
+
+        cout<<"Enter Price : ";
+        cin>> temp.price;
+
+        cout<<"Enter Year of MFG : ";
+        cin>> temp.year_of_mfg;
+
+        cout<<"Enter RAM : ";
+        cin>> temp.RAM;
+
+        cout<<"Enter Storage : ";
+        cin>> temp.storage;
+
+        cout<<"Enter Generation  : ";
+        cin>> temp.gen;
+
+        cout<<"Enter Processor : ";
+        cin>> temp.processor;
+
+        cout<<"Enter Graphics Card : ";
+        cin>> temp.gCard;
+
+        //Company, Modelno, Price, YearOfMfg, RAM, Storage, Gen,  Processor GCard
+        Laptop newLaptop;
+        newLaptop.SetData(temp.company,temp.model_no,temp.price,temp.year_of_mfg,temp.RAM,temp.storage,temp.gen,temp.processor,temp.gCard);
+        L.push_back(newLaptop);
+        cout<<endl;
+        cout<<"Do you want to update more(y/n) : ";
+        cin>>choice;
+        cout<<endl;
+    }
+    
 }
 
 void DisplayLaptop(vector<Laptop> &L)
