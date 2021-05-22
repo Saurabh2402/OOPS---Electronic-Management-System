@@ -54,6 +54,8 @@ class Laptop : public Electronics
 
 void UpdateLaptop(vector<Laptop> &L)
 {
+    //Update many Laptops
+    {
     /*Laptop temp;
                  //Company, Modelno, Price, YearOfMfg, RAM, Storage, Gen,  Processor GCard
     temp.SetData("Dell","Inspiron15",70000, 2021,8,512,1,"i5",2);
@@ -88,6 +90,8 @@ void UpdateLaptop(vector<Laptop> &L)
     
     temp.SetData("Apple","MacBookPro",250000, 2021,16,1024,11,"i7");
     L.push_back(temp);*/
+    }
+    
     char choice='y';
     while(choice=='y'|| choice=='Y')
     {

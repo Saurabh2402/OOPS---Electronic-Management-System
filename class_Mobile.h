@@ -67,6 +67,8 @@ class Mobile : public Electronics
 
 void UpdateMobile(vector<Mobile> &M)
 {
+    //Update many mobiles
+    {
     /*Mobile temp;
                 //Company, Modelno, Price, YearOfMfg, Camera, RAM, Storage, Processor
                                             // /->Year purposely set 2000 
@@ -99,37 +101,46 @@ void UpdateMobile(vector<Mobile> &M)
                                 // /->Price purposely set Negative 
     temp.SetData("OnePlus","5t",-28000,2021,64,6,64,"SnapDragon");
     M.push_back(temp);*/
-
-    /*Mobile temp;
+    }
     
-    cout<<"Enter Company : ";
-    cin>> temp.company;
+    char choice='y';
+    while(choice=='y'|| choice=='Y')
+    {
+        Mobile temp;
+        
+        cout<<"Enter Company : ";
+        cin>> temp.company;
 
-    cout<<"Enter ModelNo : ";
-    cin>> temp.model_no;
+        cout<<"Enter ModelNo : ";
+        cin>> temp.model_no;
 
-    cout<<"Enter Price : ";
-    cin>> temp.price;
+        cout<<"Enter Price : ";
+        cin>> temp.price;
 
-    cout<<"Enter Year of MFG : ";
-    cin>> temp.year_of_mfg;
+        cout<<"Enter Year of MFG : ";
+        cin>> temp.year_of_mfg;
 
-    cout<<"Enter RAM : ";
-    cin>> temp.RAM;
+        cout<<"Enter Camera : ";
+        cin>> temp.camera;
 
-    cout<<"Enter Storage : ";
-    cin>> temp.storage;
+        cout<<"Enter RAM : ";
+        cin>> temp.RAM;
 
-    cout<<"Enter Generation  : ";
-    cin>> temp.gen;
+        cout<<"Enter Storage : ";
+        cin>> temp.storage;
 
-    cout<<"Enter Processor : ";
-    cin>> temp.processor;
+        cout<<"Enter Processor : ";
+        cin>> temp.processor;
 
-    cout<<"Enter Graphics Card : ";
-    cin>> temp.gCard;
-
-    L.push_back(temp);*/
+//Company, Modelno, Price, YearOfMfg, Camera, RAM, Storage, Processor
+        Mobile newMobile;
+        newMobile.SetData(temp.company,temp.model_no,temp.price,temp.year_of_mfg,temp.camera,temp.RAM,temp.storage,temp.processor);
+        M.push_back(newMobile);
+        cout<<endl;
+        cout<<"Do you want to update more(y/n) : ";
+        cin>>choice;
+        cout<<endl;
+    }
 }
 
 void DisplayMobile(vector<Mobile> &M)
@@ -238,9 +249,9 @@ void summaryMobile(vector<Mobile> &M)
         else if(M[i].company=="MicroMax")
             c_micromax++;
         else if(M[i].company=="Oppo")
-            c_micromax++;
+            c_oppo++;
         else if(M[i].company=="Vivo")
-            c_micromax++;
+            c_vivo++;
     }
     cout<<"Total Count of Mobiles : "<<M.size()<<endl<<endl;
     cout<<"Iphones  : " << c_iphone   << endl;
