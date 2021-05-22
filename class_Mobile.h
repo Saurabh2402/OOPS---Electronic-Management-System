@@ -4,20 +4,33 @@ using namespace std;
 
 int getPositiveValue(int v,int index)
 {
-     if(v<0)
+    try
     {
-        if(index==1)
-            cout<<"Camera MegaPixels cannot be Negative!!"<<endl;
-        else if(index==2)
-            cout<<"RAM cannot be Negative!!"<<endl;
-        else if(index==3)
-            cout<<"Storage cannot be Negative!!"<<endl;
-        else if(index==4)
-            cout<<"Graphic Card cannot be Negative!!"<<endl;    
-        
-        cout<<"Enter value again : ";
-        cin>>v;
+        if(v<0)
+        {
+            if(index==1)
+                cout<<"Camera MegaPixels cannot be Negative!!"<<endl;
+            else if(index==2)
+                cout<<"RAM cannot be Negative!!"<<endl;
+            else if(index==3)
+                cout<<"Storage cannot be Negative!!"<<endl;
+            else if(index==4)
+                cout<<"Graphic Card cannot be Negative!!"<<endl;    
+            
+            throw(222);
+            
+        }
     }
+    catch(int n)
+    {
+        if(n==222)
+        {
+            cout<<"Enter value again : ";
+            cin>>v;
+        }
+        
+    }
+     
     return v;
 }
 

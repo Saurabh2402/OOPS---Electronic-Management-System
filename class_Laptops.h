@@ -2,12 +2,22 @@ using namespace std;
 int getValidGeneration(int gen)    
 {
     //Now a days, Generations are not less than 4
-    if(gen<4)
+    try
     {
-        cout<<"Invalid Generation!!"<<endl;
-        cout<<"Enter Generation again : ";
-        cin>>gen;
+        if(gen<4)
+            throw(111);
     }
+    catch(int n)
+    {
+        if(n==111)
+        {
+            cout<<"Invalid Generation!!"<<endl;
+            cout<<"Enter Generation again : ";
+            cin>>gen;
+        }
+        
+    }
+    
     return gen;
 }
 
@@ -45,8 +55,8 @@ class Laptop : public Electronics
 void UpdateLaptop(vector<Laptop> &L)
 {
     Laptop temp;
-                 //Company, Modelno, Price, YearOfMfg, RAM, Storage, Gen,  Processor
-    temp.SetData("Dell","Inspiron15",70000, 2021,8,512,11,"i5",2);
+                 //Company, Modelno, Price, YearOfMfg, RAM, Storage, Gen,  Processor GCard
+    temp.SetData("Dell","Inspiron15",70000, 2021,8,512,1,"i5",2);
     L.push_back(temp);
 
     temp.SetData("HP","Pavillion",48000, 2019,8,256,9,"i5");
