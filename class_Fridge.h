@@ -1,5 +1,6 @@
 
 using namespace std;
+
 class Fridge : public Electronics
 {
 public:

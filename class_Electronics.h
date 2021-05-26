@@ -1,5 +1,6 @@
 
 using namespace std;
+
 int getValidPrice(int price)    
 {
     //Now a days, price of mobile phones is not less than 3000

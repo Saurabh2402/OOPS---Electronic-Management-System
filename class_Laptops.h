@@ -1,4 +1,5 @@
 using namespace std;
+
 int getValidGeneration(int gen)    
 {
     //Now a days, Generations are not less than 4
@@ -149,7 +150,6 @@ void DisplayLaptop(vector<Laptop> &L)
     }
 }
 
-
 void SaveLaptop(vector<Laptop> &L)
 {
     //cout<<"Writing in Laptop file..."<<endl;
@@ -210,7 +210,6 @@ void RetrieveLaptop(vector<Laptop> &L)
     fin.close();
     //cout<<"Retrieved Successfully"<<endl;
 }
-
 
 void BudgetifyLaptops(vector<Laptop> &L)
 {

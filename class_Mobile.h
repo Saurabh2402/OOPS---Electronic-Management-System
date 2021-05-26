@@ -1,7 +1,6 @@
 
 using namespace std;
 
-
 int getPositiveValue(int v,int index)
 {
     try

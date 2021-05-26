@@ -6,8 +6,6 @@
 #include<algorithm>
 #include"class_Electronics.h"
 #include"class_Mobile.h"
-
-
 #include"class_Laptops.h"
 #include"class_Fridge.h"
 #include"SortFunctions.h"
@@ -85,7 +83,6 @@ int main()
     //Implement Summary Files : Stores previous Sales and details 
     //User defined exceptions : eg- price should be greater than 0
 }
-
 
 int Menu()
 {
@@ -179,7 +176,6 @@ void Budgetify(vector<Mobile>&M, vector<Laptop>&L,vector<Fridge>&F)
         default : cout<<"Invalid Choice!!"<<endl;
     }
 }
-
 
 void showSummary(vector<Mobile>&M, vector<Laptop>&L,vector<Fridge>&F)
 {
